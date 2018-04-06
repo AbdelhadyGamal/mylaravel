@@ -33,7 +33,7 @@ Route::get('/home', function () {
 Route::get('/about', function () {
     $version_arr=[];
     $version_arr['version']='0.1.2';
-    $version_arr['author']='Abdelhady';
+    $version_arr['author']='Abdoo';
 
     return $version_arr;
 });
