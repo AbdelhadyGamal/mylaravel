@@ -12,24 +12,27 @@
 */
 
 Route::get('/','ContentsController@home');
+
 Route::get('/client','ClientController@index');
+
 Route::get('/client/new','ClientController@newClient');
 Route::post('/client/new','ClientController@create');
+
 Route::get('/client/{client_id}','ClientController@show');
+
 Route::post('/client/{client_id}','ClientController@modify');
 
 
 Route::get('/reservations/{client_id}','RoomsController@checkAvailableRooms');
-Route::post('/reservations/{client_id}','RoomsController@checkAvailableRooms');
 
+Route::post('/reservations/{client_id}','RoomsController@checkAvailableRooms');
 
 Route::get('/book/room/{client_id}/{date_in}/{date_out}','ReservationsController@bookRoom');
 
-
 Route::get('/home', function () {
-
     return '<h1>The land on app</h1>';
 });
+
 Route::get('/about', function () {
     $version_arr=[];
     $version_arr['version']='0.1.2';
@@ -49,8 +52,8 @@ Route::get('/di', 'ClientController@di');
 
 Route::get('/facades/db', function () {
 
-
     return DB::select('SELECT * from table');
+
 });
 
 Route::get('/facades/encrypt', function () {
